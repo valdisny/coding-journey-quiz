@@ -1,15 +1,13 @@
 quiz2 = [
   {
     question: 'Wie bezeichnet man ein </p> und was fehlt hier?',
-    answer:
-      "Das ist ein 'closing Tag'. Zu einem 'closing' Tag gehört auch immer ein 'Opening' Tag - also <div></div>",
+    answer: "Das ist ein 'closing Tag'. Zu einem 'closing' Tag gehört auch immer ein 'Opening' Tag - also <div></div>",
   },
   {
     question:
-      "In welcher Relation das div mit der ID 'content' zu den anderen Elementen? <body> <div id='main'> <div id='content'> <p> Die Coding Journey ist schon ziemlich nett! </p> </div> </div> </body>",
-    answer: 'p ist ein Child-Element des divs',
-    answer: "das <div id='main'> ist der parent",
-    answer: "<div id='content'> ist das grand-child von body",
+      "In welcher Relation das div mit der ID 'content' zu den anderen Elementen? Zur besseren Lesbarkeit könntest du das Snippet in dein VSC kopieren ;) <body><div id='main'><div id='content'><p> Die Coding Journey ist schon ziemlich nett! </p></div></div></body>",
+    answer:
+      "<p> ist ein Child-Element des divs und <div id='main'> ist sein Parent. Darüber hinaus ist <div id='content'> ist das Grand-Child des Body Elements.",
   },
   { question: 'Wofür sind divs gut?', answer: 'Um HTML Elemente zu gruppieren', answer: 'Um Styles hinzuzufügen' },
   {
@@ -21,9 +19,8 @@ quiz2 = [
   { question: 'Aus was besteht ein Attribute?', answer: 'Aus Name und Value' },
   {
     question: "<div id='intro'> - wie bezeichnet man die 'id' Information und wozu ist sie gut?",
-    answer: 'Das ist ein Attribut',
-    answer: 'Sie dient zur Identifikation von gleichen HTML Elementen, bspw. zur Unterscheidung mehrere div elemente',
-    answer: 'Sie dient noch vielen anderen Zwecken, wie dem Styling, aber das kommt erst später :)',
+    answer:
+      'Das ist ein Attribut. Ein Attribut dient zur Identifikation von gleichen HTML Elementen, bspw. zur Unterscheidung mehrerer <div> Elemente. Attribute dienen noch vielen anderen Zwecken, wie dem Styling, aber das kommt erst später :) Das ID Attribut im speziellen ist dafür da, ein Element eindeutig zu identifizieren: Die ID sollte also immer einzigartig sein.',
   },
   {
     question: 'Welche HTML ELemente nutzt man bevorzugt, um Text-Inhalte darzustellen?',
@@ -32,18 +29,17 @@ quiz2 = [
   {
     question: "Benutzt man <span> für 'Inline' oder für 'Block' Inhalte?",
     answer:
-      "Inline! Das ist wichtig, denn ein <span> lässt noch weiteren Inhalt in der selben 'Zeile' wie es selbst zu; ein <div>, das man für Blockelemente benutzt, **blockiert** die gesamte Breite der Seite für sich.}",
+      "Inline! Das ist wichtig, denn ein <span> lässt noch weiteren Inhalt in der selben 'Zeile' wie es selbst zu. Das heißt, ihr könnt beispielsweise ein inline, ein strong und em Element in dem selben Text benutzen, ohne, das jedes Mal ein ungewollter Zeilenumbruch entsteht: All diese Elemente sind Inline-Elemente. Ein <div>, das man für Blockelemente benutzt, blockiert die gesamte Breite der Seite für sich. Richtig interessant wird das, wenn wir zum CSS Teil kommen.",
   },
   {
     question: "Was tut ein 'br' Element und wie schreibt man es?",
-    answer: 'Es fügt einen Zeilenumbruch in Texten hinzu',
     answer:
-      "Ein br (break) HTML Element ist ein 'self closing' Tag und kommt ohne ein closing Tag aus. Du kannst es entweder in seiner kürzten Form schreiben: <br> oder mit dem 'schließenden' Slash dazu: <br />. Beide Varianten sind valide.",
+      "Ein br (break) HTML Element fügt einen Zeilenumbruch in Texten hinzu. Es ist ein 'self closing' Tag und kommt ohne ein closing Tag aus. Du kannst es entweder in seiner kürzten Form schreiben: <br> oder mit dem 'schließenden' Slash dazu: <br />. Beide Varianten sind valide.",
   },
   {
     question: 'Welche Kind-Elemente kann ein <ul> HTML Element haben?',
     answer:
-      'Nur <li> (List Item) Elemente. Es sollte nicht direkt Text oder irgendwelche anderen Elemente beinhalten - diese sollten in dem <li> Element untergebracht sein, um klar zu machen, zu welchem Listenpunkt der Inhalt gehört',
+      'Nur <li> (List Item) Elemente. Es sollte nicht direkt Text oder irgendwelche anderen Elemente beinhalten - diese sollten in dem <li> Element untergebracht sein, um klar zu machen, zu welchem Listenpunkt der Inhalt gehört.',
   },
   {
     question:

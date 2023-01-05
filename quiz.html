@@ -1,47 +1,64 @@
 <head>
+  <!-- Hier binde ich das CSS ein, mit dessen Hilfe die Seite zumindest nicht ganz so fürchterlich aussieht. -->
   <link rel="stylesheet" href="quiz.css" />
 </head>
 <body>
+  <!-- Das Intro befindet sich in einem eigenen div, damit ich die Elemente darin bequem für's CSS ansprechen kann. 
+    Außerdem unterteilt es die Struktur und zeigt direkt, welche Elemente semantisch zusammengehören. -->
   <div class="intro">
     <h1>Quiz</h1>
     <h2>Willkommen zum Quiz!</h2>
+
     <p>
       Hier ist <strong>dein Wissen und deine Selbstbeherrschung</strong> gefragt: Lies die Fragen und beantworte sie im
-      unterstehenden Textfeld. <br />
+      unterstehenden Textfeld.
+      <br />
       Wenn du alle Fragen beantwortet hast, klick auf den großen grünen Button am Ende - scroll wieder hoch und
       vergleich deine Antworten mit denen von Valdis.
     </p>
     <br />
     <p>
-      Hier wird nichts validiert - du kannst auch runterscrollen und den Knopf direkt drücken. Bringt dir nur nicht
+      Es wird nichts validiert - du kannst auch runterscrollen und den Knopf direkt drücken. Bringt dir nur nicht
       soviel.
       <br />
-      Streng deinen Kopf an und mach dich selbst stolz!
+      Streng deinen Kopf an und mach dich selbst stolz! 💪
     </p>
   </div>
 
+  <!-- So sehen am Ende alle Fragen aus, die per Javascript hinzugefügt werden. Das hier ist sozusagen das "Template",
+  das ich benutze, um die Fragen zu "rendern". Ich hätte diesen Block auch x-mal kopieren und die Texte händisch anpassen können:
+  Das Endergebnis für euch wäre das selbe gewesen ... die Arbeit für mich aber seeehr viel langweiliger. Außerdem wäre es dann schwierig,
+ irgendwas an dieser Struktur im Nachgang zu ändern. Ich müsste es x-mal anpassen! -->
   <div class="questions-wrap">
     <div class="question">
+
       <div class="headers">
         <h3>FRAGE</h3>
         <h3>ANTWORT</h3>
       </div>
-      <div class="question-text">Template!</div>
+
+      <div class="question-text">Template-Text! Dieser Text wird beim Einfügen der Fragen überschrieben. </div>
+
+      <!-- Textfeld zum Schreiben eurer eigenen Antworten -->
       <div class="input">
         <textarea></textarea>
       </div>
+
       <div class="block-answer">
         <div class="answer">
-          <span class="hint">Benutz den Knopf unten, um die Antworten zu sehen!</span>
-          <span class="answer-text">Template!</span>
+          <span class="hint">*klick* ... oder benutz den Knopf ganz unten, um alle Antworten zu enthüllen.</span>
+          <span class="answer-text">Template-Text! Dieser Text wird beim Einfügen der Fragen überschrieben.</span>
         </div>
       </div>
     </div>
   </div>
-
+  <!-- Button am Ende der Website, der die Funktion "revealAnswers" aufruft, wenn er geklickt wird. -->
   <div class="reveal">
     <button id="reveal-btn" onclick="revealAnswers()">Antworten anzeigen!</button>
   </div>
 </body>
-<script type="text/javascript" src="q-json.js"></script>
+<!-- Diese Skriptelemente könntet ihr auch oben im Header bei der CSS-Datei einbinden. Ich musste sie hier unten einfügen, 
+  denn ich greife innerhalb des quiz.js Skripts auf das oben definierte HTML zu. Der Browser liest diese Informationen 
+  Zeile für Zeile und muss erst das HTML lesen, bevor er dieses Javascript ausführt, damit der Code funktioniert. -->
+<script type="text/javascript" src="all-questions.js"></script>
 <script type="text/javascript" src="quiz.js"></script>

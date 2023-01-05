@@ -1,3 +1,7 @@
+/* Diese Datei ändert das Aussehen der HTML-Elemente, da quiz.html sie im head einbindet. 
+* Kommt am besten wieder, wenn ihr den CSS Kurs angefangen habt :) 
+*/
+
 body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -13,12 +17,16 @@ h2 {
   margin-bottom: 1em;
 }
 
+/* .intro > * ist ein etwas "fortgeschrittener" CSS-Selektor. Ihr müsst ihn von hinten nach vorn lesen - 
+er sagt "Jedes Element (*) das DIREKTES Kind (>) von Elementen mit der Klasse (.) intro sind" */
 .intro > *,
 .question {
   margin: auto;
   max-width: 800px;
 }
 
+/* Falls euch _wirklich_ interessiert, was display:flex tut, lege ich euch den Artikel von CSS Tricks ans Herz. 
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
 .question {
   margin: auto;
   display: flex;
@@ -47,6 +55,9 @@ h2 {
   font-size: 18px;
 }
 
+/* calc() ist eine spezielle CSS Funktion, die es ermöglicht, Einheiten gegeneinander zu verrechnen. Das ist super praktisch,
+falls ihr relative Größen habt (wie die Prozentangabe), aber eine feste Größe, etwa für eine Lücke, abziehen müsst.
+Es gibt einen ganzen Haufen von diesen Funktionen: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Functions */
 .question textarea {
   width: calc(100% - 10px);
   height: 7em;
