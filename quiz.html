@@ -1,0 +1,47 @@
+<head>
+  <link rel="stylesheet" href="quiz.css" />
+</head>
+<body>
+  <div class="intro">
+    <h1>Quiz</h1>
+    <h2>Willkommen zum Quiz!</h2>
+    <p>
+      Hier ist <strong>dein Wissen und deine Selbstbeherrschung</strong> gefragt: Lies die Fragen und beantworte sie im
+      unterstehenden Textfeld. <br />
+      Wenn du alle Fragen beantwortet hast, klick auf den großen grünen Button am Ende - scroll wieder hoch und
+      vergleich deine Antworten mit denen von Valdis.
+    </p>
+    <br />
+    <p>
+      Hier wird nichts validiert - du kannst auch runterscrollen und den Knopf direkt drücken. Bringt dir nur nicht
+      soviel.
+      <br />
+      Streng deinen Kopf an und mach dich selbst stolz!
+    </p>
+  </div>
+
+  <div class="questions-wrap">
+    <div class="question">
+      <div class="headers">
+        <h3>FRAGE</h3>
+        <h3>ANTWORT</h3>
+      </div>
+      <div class="question-text">Template!</div>
+      <div class="input">
+        <textarea></textarea>
+      </div>
+      <div class="block-answer">
+        <div class="answer">
+          <span class="hint">Benutz den Knopf unten, um die Antworten zu sehen!</span>
+          <span class="answer-text">Template!</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="reveal">
+    <button id="reveal-btn" onclick="revealAnswers()">Antworten anzeigen!</button>
+  </div>
+</body>
+<script type="text/javascript" src="q-json.js"></script>
+<script type="text/javascript" src="quiz.js"></script>

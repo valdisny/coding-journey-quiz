@@ -1,0 +1,93 @@
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h1,
+h2 {
+  text-align: center;
+  padding-bottom: 0.5em;
+}
+
+.intro {
+  font-size: 16px;
+  margin-bottom: 1em;
+}
+
+.intro > *,
+.question {
+  margin: auto;
+  max-width: 800px;
+}
+
+.question {
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.headers {
+  display: flex;
+  width: 100%;
+}
+
+.question .input,
+.question .block-answer,
+.headers > h3 {
+  flex: 0 0 50%;
+}
+
+.headers > h3 {
+  color: grey;
+}
+
+.question .question-text {
+  flex: 2 0 100%;
+  font-style: unset;
+  margin-bottom: 1em;
+  font-size: 18px;
+}
+
+.question textarea {
+  width: calc(100% - 10px);
+  height: 7em;
+}
+
+.question .answer {
+  background-color: #d9d8e1;
+  padding: 1em;
+  border-radius: 3px;
+  min-height: 3em;
+}
+
+.question .answer-text,
+.answer .hint {
+  visibility: hidden;
+}
+
+.question .answer:hover .hint {
+  visibility: visible;
+  opacity: 0.5;
+  font-style: italic;
+}
+
+.question .answer.revealed {
+  background-color: #8ef0d2;
+}
+
+.question .revealed .answer-text {
+  visibility: visible;
+}
+
+.question .revealed .hint {
+  display: none;
+}
+
+#reveal-btn {
+  font-size: 16pt;
+  margin: auto;
+  background-color: #8ef0d2;
+  padding: 0.5em;
+  border: 2px solid #51937f;
+  display: block;
+  margin-top: 2em;
+}
