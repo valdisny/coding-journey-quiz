@@ -1,12 +1,16 @@
 const REVEAL_CLASSNAME = 'revealed';
 
+// Read the URL you're visiting and extracting the search param called "quiz" to get its value
+const queryString = window.location.search;
+const quizName = new URLSearchParams(queryString).get('quiz');
+
 // ===== Load the questions =====
-// TODO Load questions depending on calling URL
-let questions = quiz2;
-randomizeOrder(questions);
+// "allQuestions" is a Javascript object hosting all the questions of all quizes.
+// For better readability, it is outsourced in an own JS file ("all-questions.js"), but available here
+// because it is imported into the quiz.html file in which context this file is running
+let questions = allQuestions[quizName];
 
 // ==== Filling the page with questions ====
-
 /* The initial HTML is containing a template HTML Element with the class "question". The following code
  * - Greps the Element
  * - Duplicates it for every question we have and fills in the question/answer text
@@ -14,25 +18,35 @@ randomizeOrder(questions);
  */
 const node = document.querySelector('.question');
 
-for (let q of questions) {
-  const clone = node.cloneNode(true);
-  clone.querySelector('.question-text').textContent = q.question;
-  clone.querySelector('.answer-text').textContent = q.answer;
-  document.querySelector('.questions-wrap').appendChild(clone);
+if (questions) {
+  const header = document.querySelector('h1');
+  console.log(header);
+  header.textContent = quizName;
 
-  // We add an EventListener to the answer field that tells us when the Element is clicked, so we're able to
-  // reveal or hide the answer
-  clone.querySelector('.answer').addEventListener('click', event => {
-    console.log(event);
-    const el = event.target;
+  randomizeOrder(questions);
 
-    el.classList.toggle(REVEAL_CLASSNAME);
-  });
+  for (let q of questions) {
+    const clone = node.cloneNode(true);
+    clone.querySelector('.question-text').textContent = q.question;
+    clone.querySelector('.answer-text').textContent = q.answer;
+    document.querySelector('.questions-wrap').appendChild(clone);
+
+    // We add an EventListener to the answer field that tells us when the Element is clicked, so we're able to
+    // reveal or hide the answer
+    addClickBehaviourToAnswer(clone);
+  }
+
+  // In the end, we remove the template element. It's not needed anymore
+  document.querySelector('.questions-wrap').removeChild(node);
+
+  // In case we do NOT have any questions, something went wrong, and we want to show an info about that ... kind of.
+} else {
+  node.querySelector('.question-text').textContent = 'Wie bist du hierhergekommen?! Das ist keine valide Quiz-Seite!';
+  node.querySelector('.answer-text').textContent =
+    'Naja, da du das getan hast, weiß ich da keine rechte Antwort, aber ich habe ein zwei Theorien: Theorie 1, wir haben die Verlinkung unter einem Video verbaselt (upsie), in dem Fall freuen wir uns über Feedback. Theorie 2, du warst neugierig, was passiert, wenn du den Query Parameter oben verändert. Na, nun hast du es rausgefunden. Ein Hoch auf die Neugier! 🎉';
+
+  addClickBehaviourToAnswer(node);
 }
-
-// In the end, we remove the template element. It's not needed anymore
-document.querySelector('.questions-wrap').removeChild(node);
-
 /*
  * To reveal all answers, we add a new class to every Element that has the class "answer" and is a descendant of an element with class "question"
  * You'll learn more about selectors in the CSS course :)
@@ -45,7 +59,6 @@ function revealAnswers() {
   });
 }
 
-
 /* This is some mathematican magic I copy-pasted from https://stackoverflow.com/a/12646864
  * to randomize the order of the question array.
  * PLEASE NOTE: When copy-pasting code from somewhere, always read through it AND MAKE SURE YOU UNDERSTAND IT before running it!
@@ -56,4 +69,14 @@ function randomizeOrder(array) {
     const j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
   }
+}
+
+/* When you click on the Child Element with class "answer" of the element we give into this function, the
+class saved in the constant REVEAL_CLASSNAME should be either added or removed, depending on if it's available or not. */
+function addClickBehaviourToAnswer(el) {
+  el.querySelector('.answer').addEventListener('click', event => {
+    const el = event.target;
+
+    el.classList.toggle(REVEAL_CLASSNAME);
+  });
 }

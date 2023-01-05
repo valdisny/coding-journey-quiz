@@ -6,6 +6,10 @@ body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+h1 {
+  text-transform: capitalize;
+}
+
 h1,
 h2 {
   text-align: center;
@@ -70,6 +74,10 @@ Es gibt einen ganzen Haufen von diesen Funktionen: https://developer.mozilla.org
   min-height: 3em;
 }
 
+.question .answer:hover {
+  cursor: pointer;
+}
+
 .question .answer-text,
 .answer .hint {
   visibility: hidden;
@@ -101,4 +109,10 @@ Es gibt einen ganzen Haufen von diesen Funktionen: https://developer.mozilla.org
   border: 2px solid #51937f;
   display: block;
   margin-top: 2em;
+}
+
+.privacy-hint {
+  margin-top: 1em;
+  font-size: 9pt;
+  color: grey;
 }
