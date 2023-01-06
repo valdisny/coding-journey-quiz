@@ -21,7 +21,7 @@ const node = document.querySelector('.question');
 if (questions) {
   const header = document.querySelector('h1');
   console.log(header);
-  header.textContent = quizName;
+  header.textContent = `Willkommen zum ${quizName}!`;
 
   randomizeOrder(questions);
 
@@ -57,6 +57,14 @@ function revealAnswers() {
   answers.forEach(a => {
     a.className += ' ' + REVEAL_CLASSNAME;
   });
+
+  // After revealing the answers, we want to scroll back to the top
+  // We need to do that with an "instant timeout" to make sure the code above is executed, otherwise the scroll doesnt work sometimes
+  // That sounds like I know what I am doing, but honestly, if there's some race-condition/hard to reproduce/random error ...
+  // ... at some point, I always put a setTimeout(fn, 0) around it 🤷‍♂️
+  setTimeout(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  }, 0);
 }
 
 /* This is some mathematican magic I copy-pasted from https://stackoverflow.com/a/12646864

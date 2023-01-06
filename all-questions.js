@@ -1,3 +1,28 @@
+
+/**
+* === SPOILER ALERT! ===
+* === SPOILER ALERT! ===
+* === SPOILER ALERT! ===
+*
+* Du willst dir diese Datei vermutlich nicht anschauen, außer, du willst dir die kommenden Quizes ordentlich vermiesen. Falls dich der generelle Aufbau interessiert: Diese Datei beinhaltet
+* eine Variable "allQuestions", die wiederrum mit einem Objekt initialisiert wird. Dieses Objekt hat den Quiznamen, bspw "quiz1" als Key und ein Array aus Frage/Antwort-Objekten als Wert:
+
+allQuestions = {
+  quizName: [
+    {
+      question: 'Ist das hier eine Frage?',
+      answer: 'Ja, doch, ich bin ganz optimistisch.'
+    },
+    {...} // usw
+  ]
+}
+
+* Beim Laden der Quizseite geben wir den quiznamen als Parameter mit und bestimmen so, welche Frage/Antrowrtpäärchen wir laden müssen. Das passiert aber drüben in quiz.js - also husch, husch, ab mit dir.
+* === SPOILER ALERT! ===
+* === SPOILER ALERT! ===
+* === SPOILER ALERT! ===
+*/
+
 allQuestions = {
   quiz1: [
     {
@@ -7,7 +32,7 @@ allQuestions = {
     },
     {
       question:
-        "In welcher Relation das div mit der ID 'content' zu den anderen Elementen? Zur besseren Lesbarkeit könntest du das Snippet in dein VSC kopieren ;) <body><div id='main'><div id='content'><p> Die Coding Journey ist schon ziemlich nett! </p></div></div></body>",
+        "In welcher Relation das div mit der ID 'content' zu den anderen Elementen? Zur besseren Lesbarkeit könntest du das Snippet in dein Visual Studio Code kopieren ;) <body><div id='main'><div id='content'><p> Die Coding Journey ist schon ziemlich nett! </p></div></div></body>",
       answer:
         "<p> ist ein Child-Element des divs und <div id='main'> ist sein Parent. Darüber hinaus ist <div id='content'> ist das Grand-Child des Body Elements.",
     },

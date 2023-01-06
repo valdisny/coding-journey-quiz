@@ -6,15 +6,22 @@
   <!-- Das Intro befindet sich in einem eigenen div, damit ich die Elemente darin bequem für's CSS ansprechen kann. 
     Außerdem unterteilt es die Struktur und zeigt direkt, welche Elemente semantisch zusammengehören. -->
   <div class="intro">
-    <h1>Quiz</h1>
-    <h2>Willkommen zum Quiz!</h2>
+    <img src="coding-journey-splash-quiz.png" id="splashscreen" />
+    <h1>Willkommen zum Quiz!</h1>
 
     <p>
-      Hier ist <strong>dein Wissen und deine Selbstbeherrschung</strong> gefragt: Lies die Fragen und beantworte sie im
-      unterstehenden Textfeld.
+      Du solltest immer erst die entsprechende Kurs-Lesson absolvieren, bevor du dich ans Quiz wagst. Schau
+      <a href="https://www.youtube.com/channel/UCypeIUrbeE59oOpibR1kcng" target="_blank">auf dem Channel</a> vorbei,
+      falls du vergessen hast, welche das ist.
+    </p>
+    <br />
+    <p>
+      Beim Quiz sind <strong>dein Wissen und deine Selbstbeherrschung</strong> gefragt: Lies die Fragen und beantworte
+      sie im unterstehenden Textfeld, am Besten mit ausformulierten Sätzen. Das bringt dir den meisten Erinnerungs- und
+      Vertiefungseffekt.
       <br />
-      Wenn du alle Fragen beantwortet hast, klick auf den großen grünen Button am Ende - scroll wieder hoch und
-      vergleich deine Antworten mit denen von Valdis.
+      Wenn du alle Fragen beantwortet hast, klick auf den <span class="button-hint">großen grünen Button</span> am Ende
+      und vergleich deine Antworten mit denen von Valdis.
     </p>
     <br />
     <p>
@@ -23,7 +30,7 @@
       <br />
       Streng deinen Kopf an und mach dich selbst stolz! 💪
     </p>
-    <p class="privacy-hint">
+    <p class="hint">
       Übrigens: Diese Daten werden in keinster Weise verarbeitet, also auch nirgends hingeschickt. Sie leben nur in
       deinem Browser und nur, solang du die Seite offen hast und nicht neulädst.
     </p>
@@ -35,19 +42,18 @@
  irgendwas an dieser Struktur im Nachgang zu ändern. Ich müsste es x-mal anpassen! -->
   <div class="questions-wrap">
     <div class="question">
-      <div class="headers">
-        <h3>FRAGE</h3>
-        <h3>ANTWORT</h3>
-      </div>
-
+      <h3>FRAGE</h3>
       <div class="question-text">Template-Text! Dieser Text wird beim Einfügen der Fragen überschrieben.</div>
 
-      <!-- Textfeld zum Schreiben eurer eigenen Antworten -->
-      <div class="input">
-        <textarea></textarea>
+      <div class="answer-headers">
+        <h5>DEINE ANTWORT</h5>
+        <h5>VALDIS ANTWORT</h5>
       </div>
-
       <div class="block-answer">
+        <!-- Textfeld zum Schreiben eurer eigenen Antworten -->
+        <div class="input">
+          <textarea></textarea>
+        </div>
         <div class="answer">
           <span class="hint">*klick* ... oder benutz den Knopf ganz unten, um alle Antworten zu enthüllen.</span>
           <span class="answer-text">Template-Text! Dieser Text wird beim Einfügen der Fragen überschrieben.</span>
@@ -55,9 +61,16 @@
       </div>
     </div>
   </div>
-  <!-- Button am Ende der Website, der die Funktion "revealAnswers" aufruft, wenn er geklickt wird. -->
-  <div class="reveal">
-    <button id="reveal-btn" onclick="revealAnswers()">Antworten anzeigen!</button>
+  <div class="footer">
+    <!-- Button am Ende der Website, der die Funktion "revealAnswers" aufruft, wenn er geklickt wird. -->
+    <div class="reveal">
+      <button id="reveal-btn" onclick="revealAnswers()">Antworten anzeigen!</button>
+    </div>
+    <p class="hint">
+      Nochmal Übrigens: Diese Quizseite besteht aus - du wirst es kaum glauben - HTML, CSS und JS (... ok, und einem
+      .png). Wenn du magst und neugierig bist, kannst du dir den Code
+      <a href="https://github.com/valdisny/coding-journey-quiz" target="_blank">hier</a> anschauen.
+    </p>
   </div>
 </body>
 <!-- Diese Skriptelemente könntet ihr auch oben im Header bei der CSS-Datei einbinden. Ich musste sie hier unten einfügen, 

@@ -1,9 +1,9 @@
 /* Diese Datei ändert das Aussehen der HTML-Elemente, da quiz.html sie im head einbindet. 
-* Kommt am besten wieder, wenn ihr den CSS Kurs angefangen habt :) 
+* Kommt am besten wieder her, sobald ihr den CSS Kurs angefangen habt :) 
 */
 
 body {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Arial, sans-serif;
 }
 
 h1 {
@@ -24,38 +24,39 @@ h2 {
 /* .intro > * ist ein etwas "fortgeschrittener" CSS-Selektor. Ihr müsst ihn von hinten nach vorn lesen - 
 er sagt "Jedes Element (*) das DIREKTES Kind (>) von Elementen mit der Klasse (.) intro sind" */
 .intro > *,
-.question {
+.question,
+.footer {
   margin: auto;
   max-width: 800px;
 }
 
-/* Falls euch _wirklich_ interessiert, was display:flex tut, lege ich euch den Artikel von CSS Tricks ans Herz. 
-https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
-.question {
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
+#splashscreen {
+  display: block;
 }
 
-.headers {
+/* Falls euch _wirklich_ interessiert, was display:flex tut, lege ich euch den Artikel von CSS Tricks ans Herz. 
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+.question .block-answer,
+.answer-headers {
+  margin: auto;
   display: flex;
   width: 100%;
 }
 
-.question .input,
-.question .block-answer,
-.headers > h3 {
+.block-answer .input,
+.block-answer answer,
+.answer-headers h5 {
   flex: 0 0 50%;
 }
 
-.headers > h3 {
+h3,
+h5 {
   color: grey;
 }
 
 .question .question-text {
   flex: 2 0 100%;
   font-style: unset;
-  margin-bottom: 1em;
   font-size: 18px;
 }
 
@@ -89,8 +90,11 @@ Es gibt einen ganzen Haufen von diesen Funktionen: https://developer.mozilla.org
   font-style: italic;
 }
 
+.question .answer:not(.revealed) {
+  max-height: 5em;
+}
 .question .answer.revealed {
-  background-color: #8ef0d2;
+  background-color: #4dcfd8;
 }
 
 .question .revealed .answer-text {
@@ -101,17 +105,21 @@ Es gibt einen ganzen Haufen von diesen Funktionen: https://developer.mozilla.org
   display: none;
 }
 
+.button-hint,
+#reveal-btn {
+  background-color: #8ef0d2;
+  border: 2px solid #51937f;
+}
+
 #reveal-btn {
   font-size: 16pt;
   margin: auto;
-  background-color: #8ef0d2;
   padding: 0.5em;
-  border: 2px solid #51937f;
   display: block;
   margin-top: 2em;
 }
 
-.privacy-hint {
+.hint {
   margin-top: 1em;
   font-size: 9pt;
   color: grey;
