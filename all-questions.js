@@ -1,10 +1,9 @@
-
 /**
 * === SPOILER ALERT! ===
 * === SPOILER ALERT! ===
 * === SPOILER ALERT! ===
 *
-* Du willst dir diese Datei vermutlich nicht anschauen, außer, du willst dir die kommenden Quizes ordentlich vermiesen. Falls dich der generelle Aufbau interessiert: Diese Datei beinhaltet
+* Du willst dir diese Datei vermutlich nicht anschauen, außer, du möchtest dir die kommenden Quizes ordentlich vermiesen. Falls dich der generelle Aufbau interessiert: Diese Datei beinhaltet
 * eine Variable "allQuestions", die wiederrum mit einem Objekt initialisiert wird. Dieses Objekt hat den Quiznamen, bspw "quiz1" als Key und ein Array aus Frage/Antwort-Objekten als Wert:
 
 allQuestions = {
@@ -28,22 +27,29 @@ allQuestions = {
     {
       question: 'Wie bezeichnet man ein </p> und was fehlt hier?',
       answer:
-        "Das ist ein 'closing Tag'. Zu einem 'closing' Tag gehört auch immer ein 'Opening' Tag - also <div></div>",
+        "Das ist ein 'closing Tag' eines paragraph Elements. Zu einem 'closing' Tag gehört auch immer ein 'opening' Tag - vollständig wäre es also mit <p></p>",
     },
     {
       question:
-        "In welcher Relation das div mit der ID 'content' zu den anderen Elementen? Zur besseren Lesbarkeit könntest du das Snippet in dein Visual Studio Code kopieren ;) <body><div id='main'><div id='content'><p> Die Coding Journey ist schon ziemlich nett! </p></div></div></body>",
+        "In welcher Relation das div mit der ID 'content' zu den anderen Elementen? (Zur besseren Lesbarkeit kannst du das Snippet in dein Visual Studio Code kopieren) <body><div id='main'><div id='content'><p> Die Coding Journey ist schon ziemlich nett! </p></div></div></body>",
       answer:
-        "<p> ist ein Child-Element des divs und <div id='main'> ist sein Parent. Darüber hinaus ist <div id='content'> ist das Grand-Child des Body Elements.",
+        "<p> ist ein Child-Element des 'content' divs und <div id='main'> ist sein Parent. Darüber hinaus ist <div id='content'> ist das Grand-Child des Body Elements. Das heißt das 'content' div ist ein descendent vom body, und body ist ein ancestor des 'content' divs.",
     },
-    { question: 'Wofür sind divs gut?', answer: 'Um HTML Elemente zu gruppieren', answer: 'Um Styles hinzuzufügen' },
+    {
+      question: 'Wofür sind "div"-Elemente gut?',
+      answer:
+        'Das div ist ein Element, das hauptsächlich zum Gruppieren von anderen Elementen genutzt wird, um sowohl einen semantischen Zusammenhang in der Struktur zu signalisieren als auch, später dann, diese Elemente einfacher über einen CSS Selektor ansprechen zu können. Man könnte sagen, div Elemente sind Boxen, die zusammengehörigen Krimskram beinhalten: Eine Box für die Nudeln, eine andere für das Obst, darein kommen die Socken, ...',
+    },
     {
       question: 'Welche Elemente kann ein <div> als Kindelemente enthalten?',
-      answer: 'Alle anderen HTML Elemente, auch andere divs - allerdings kein head/body!',
+      answer:
+        'Alle anderen HTML Elemente, auch andere divs. Es gibt da kaum Begrenzungen - Ausnahmen bilden hier die head/body Elemente, die immer nur auf oberste Ebene (und immer nur einmal) vorkommen.',
     },
-    { question: 'Was sind Attribute?', answer: 'Zusätzliche Eigenschaften eines HTML elements' },
-    { question: 'Wo werden Attribute hinzugefügt?', answer: 'Zum Opening Tag eines HTML ELements' },
-    { question: 'Aus was besteht ein Attribute?', answer: 'Aus Name und Value' },
+    {
+      question: 'Was sind, im Kontext von HTML, sogenannte Attribute? Wie sehen sie aus?',
+      answer:
+        'Attribute sind zusätzliche Eigenschaften an einem HTML Element. Sie bestehen aus einem Namen und einem Value und werden am Opening Tag des HTML Elements hinzugefügt: <div class="i-am-an-attribute"></div>. "class" ist hier der Name und i-am-an-attribute der Value des Attributs.',
+    },
     {
       question: "<div id='intro'> - wie bezeichnet man die 'id' Information und wozu ist sie gut?",
       answer:
@@ -51,7 +57,8 @@ allQuestions = {
     },
     {
       question: 'Welche HTML ELemente nutzt man bevorzugt, um Text-Inhalte darzustellen?',
-      answer: 'p (paragraph) oder span Elemente',
+      answer:
+        'Ein p (paragraph) ist das Standard-HTML-Element für Text. Man kann aber genauso gut ein span Element nutzen oder Text direkt in einem div hinterlegen. Darüber hinaus gibt es noch HTML-Elemente, die Text semantisch hervorheben: strong und em.',
     },
     {
       question: "Benutzt man <span> für 'Inline' oder für 'Block' Inhalte?",
@@ -71,7 +78,7 @@ allQuestions = {
     {
       question:
         'Wenn du eine Schritt-für-Schritt Anleitung in HTML verfassen möchtest, welches Element eignet sich dafür am besten?',
-      answer: 'Das <ol> Element, das eine geordnete (nummerierte) Liste an Punkten erzeugt',
+      answer: 'Das <ol> Element, das eine geordnete (nummerierte) Liste an Punkten erzeugt.',
     },
     {
       question:
@@ -82,21 +89,22 @@ allQuestions = {
     {
       question: "Was bezeichnet man als 'self closing tag'?",
       answer:
-        'Ein HTML Element bzw. ein Start Tag, das mit einem Slash abschließt: <img />. Diese benötigen kein explizites End-Tag mehr',
+        'Ein HTML Element bzw. ein Start Tag, das mit einem Slash abschließt: <img />. Diese haben kein explizites End-Tag mehr.',
     },
     {
       question: 'Wie zeigt man bei einem Video HTML Element die Kontrollelemente an?',
-      answer: "Indem man das controls Attribut hinzufügt, bspw: <video src='...' controls></video>",
+      answer:
+        "Indem man dem <video></video> Element ein Attribut namens 'controls' hinzufügt: <video src='...' controls></video>. Das Attribut kommt ohne Value aus, weil seine schiere Anwesenheit bereits die benötigte Information transportiert.",
     },
     {
       question:
         'Was kann man zwischen den Opening und Closing tag von <video> hinzufügen und in welchen Fällen wird der Inhalt angezeigt?',
-      answer: 'Fallback-Text. Sieht man, wenn das Video nicht geladen werden kann',
+      answer: 'Einen Fallback-Text, der angezeigt wird, wenn das Video nicht geladen werden kann.',
     },
     {
       question: 'Wie erstelle ich eine Unter-Unter-Überschrift?',
       answer:
-        "Mithilfe des <h3> Tags. h steht für 'Heading' und die Zahl gibt das Level der Überschrift an - über h3 gibt es also h2 und h1",
+        "Mithilfe des <h3> Tags. h steht für 'Heading' und die Zahl gibt das Level der Überschrift an - über h3 gibt es also h2 und h1, was h3 zu einer Unter-Unter-Überschrift macht.",
     },
   ],
 };
