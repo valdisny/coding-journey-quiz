@@ -73,36 +73,30 @@ Es gibt einen ganzen Haufen von diesen Funktionen: https://developer.mozilla.org
   padding: 1em;
   border-radius: 3px;
   min-height: 3em;
+  /* Wichtig für den .flip-btn 👇 */
+  position: relative;
 }
 
-.question .answer:hover {
+.flip-btn {
+  /* Mmmh, Magic! Mit dem "position: absolute" verlässt der flip-button die standardmäßige Position, die die HTML Struktur ihm eigentlich vorgeben würde und positioniert sich
+  (a) am ersten Parent-Element, das die "position: relative" Regel besitzt oder (b) am höchsten Element, also dem Body. Die right/top Werte geben darüber hinaus an, _wo genau_
+  er sich zu seinem relativen Parent positionieren soll. In diesem Falle 5px vom rechten und oberen Rand seines relativen Parents entfernt.  */
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  /* "unset" löscht vorgegebene Werte, die bspw. durch vorherige Regeln oder dem Browser selbst definiert wurden. So wird unser Button "unsichtbar". */
+  background: unset;
+  border: unset;
+
+  color: grey;
+  font-size: 12pt;
   cursor: pointer;
-}
 
-.question .answer-text,
-.answer .hint {
   visibility: hidden;
 }
 
-.question .answer:hover .hint {
-  visibility: visible;
-  opacity: 0.5;
-  font-style: italic;
-}
-
-.question .answer:not(.revealed) {
-  max-height: 5em;
-}
-.question .answer.revealed {
-  background-color: #4dcfd8;
-}
-
-.question .revealed .answer-text {
-  visibility: visible;
-}
-
-.question .revealed .hint {
-  display: none;
+.question .answer-text {
+  visibility: hidden;
 }
 
 .button-hint,
@@ -123,4 +117,30 @@ Es gibt einen ganzen Haufen von diesen Funktionen: https://developer.mozilla.org
   margin-top: 1em;
   font-size: 9pt;
   color: grey;
+}
+
+/* ===
+Styles für [nicht] aufgedeckte Antworten 
+=== */
+.question .answer:hover .flip-btn {
+  visibility: visible;
+}
+
+/* Sollte eine Antwort noch verdeckt sein, und zwar nur dann!, möchten wir ihr eine maximale Höhe geben, damit die Größe des Kästchen nicht zuviel über die Ausführlichkeit
+der Antwort verrät. Das ermöglicht uns der not() selektor: Hiermit selektierne wir alle Elemente, die ein .question als Parent haben und über die Klasse .answer verfügen, die
+NICHT auch noch .revealed als Klasse haben. */
+.question .answer:not(.revealed) {
+  max-height: 5em;
+}
+
+.question .answer.revealed {
+  background-color: #4dcfd8;
+}
+
+.question .answer.revealed .flip-btn {
+  color: #1b6f75;
+}
+
+.question .revealed .answer-text {
+  visibility: visible;
 }

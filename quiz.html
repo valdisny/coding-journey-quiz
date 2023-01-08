@@ -55,7 +55,7 @@
           <textarea></textarea>
         </div>
         <div class="answer">
-          <span class="hint">*klick* ... oder benutz den Knopf ganz unten, um alle Antworten zu enthüllen.</span>
+          <button class="flip-btn" title="Antwort wenden" onclick="toggleAnswerReveal(this)">↩</button>
           <span class="answer-text">Template-Text! Dieser Text wird beim Einfügen der Fragen überschrieben.</span>
         </div>
       </div>
@@ -67,7 +67,7 @@
       <button id="reveal-btn" onclick="revealAnswers()">Antworten anzeigen!</button>
     </div>
     <p class="hint">
-      Nochmal Übrigens: Diese Quizseite besteht aus - du wirst es kaum glauben - HTML, CSS und JS (... ok, und einem
+      Nochmal übrigens: Diese Quizseite besteht aus - <em>große Überraschung</em> - HTML, CSS und JS (... ok, und einem
       .png). Wenn du magst und neugierig bist, kannst du dir den Code
       <a href="https://github.com/valdisny/coding-journey-quiz" target="_blank">hier</a> anschauen.
     </p>
