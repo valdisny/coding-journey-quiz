@@ -20,7 +20,6 @@ const node = document.querySelector('.question');
 
 if (questions) {
   const header = document.querySelector('h1');
-  console.log(header);
   header.textContent = `Willkommen zum ${quizName}!`;
 
   randomizeOrder(questions);
@@ -41,6 +40,8 @@ if (questions) {
   node.querySelector('.answer-text').textContent =
     'Naja, da du das getan hast, weiß ich da keine rechte Antwort, aber ich habe ein zwei Theorien: Theorie 1, wir haben die Verlinkung unter einem Video verbaselt (upsie), in dem Fall freuen wir uns über Feedback. Theorie 2, du warst neugierig, was passiert, wenn du den Query Parameter oben verändert. Na, nun hast du es rausgefunden. Ein Hoch auf die Neugier! 🎉';
 }
+
+// ==== Button functionality ====
 /*
  * To reveal all answers, we add a new class to every Element that has the class "answer" and is a descendant of an element with class "question"
  * You'll learn more about selectors in the CSS course :)
@@ -65,6 +66,8 @@ function revealAnswers() {
 function toggleAnswerReveal(btnEl) {
   btnEl.offsetParent.classList.toggle(REVEAL_CLASSNAME);
 }
+
+// ==== Utility ====
 
 /* This is some mathematican magic I copy-pasted from https://stackoverflow.com/a/12646864
  * to randomize the order of the question array.
