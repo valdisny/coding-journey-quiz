@@ -25,13 +25,13 @@ allQuestions = {
 allQuestions = {
   quiz1: [
     {
-      question: 'Wie bezeichnet man ein </p> und was fehlt hier?',
+      question: 'Nehmen wir an, du hast folgendes HTML Dokument: <body> </p> </body>. Was genau ist das </p> und was fehlt hier für valides HTML?',
       answer:
         "Das ist ein 'closing Tag' eines paragraph Elements. Zu einem 'closing' Tag gehört auch immer ein 'opening' Tag - vollständig wäre es also mit <p></p>",
     },
     {
       question:
-        "In welcher Relation das div mit der ID 'content' zu den anderen Elementen? (Zur besseren Lesbarkeit kannst du das Snippet in dein Visual Studio Code kopieren) <body><div id='main'><div id='content'><p> Die Coding Journey ist schon ziemlich nett! </p></div></div></body>",
+        "In welcher Relation steht das div mit der ID 'content' zu den anderen Elementen? (Zur besseren Lesbarkeit kannst du das Snippet in dein Visual Studio Code kopieren) <body><div id='main'><div id='content'><p> Die Coding Journey ist schon ziemlich nett! </p></div></div></body>",
       answer:
         "<p> ist ein Child-Element des 'content' divs und <div id='main'> ist sein Parent. Darüber hinaus ist <div id='content'> ist das Grand-Child des Body Elements. Das heißt das 'content' div ist ein descendent vom body, und body ist ein ancestor des 'content' divs.",
     },
@@ -66,7 +66,7 @@ allQuestions = {
         "Inline! Das ist wichtig, denn ein <span> lässt noch weiteren Inhalt in der selben 'Zeile' wie es selbst zu. Das heißt, ihr könnt beispielsweise ein inline, ein strong und em Element in dem selben Text benutzen, ohne, das jedes Mal ein ungewollter Zeilenumbruch entsteht: All diese Elemente sind Inline-Elemente. Ein <div>, das man für Blockelemente benutzt, blockiert die gesamte Breite der Seite für sich. Richtig interessant wird das, wenn wir zum CSS Teil kommen.",
     },
     {
-      question: "Was tut ein 'br' Element und wie schreibt man es?",
+      question: "Was bewirkt ein 'br' Element und wie schreibt man es?",
       answer:
         "Ein br (break) HTML Element fügt einen Zeilenumbruch in Texten hinzu. Es ist ein 'self closing' Tag und kommt ohne ein closing Tag aus. Du kannst es entweder in seiner kürzten Form schreiben: <br> oder mit dem 'schließenden' Slash dazu: <br />. Beide Varianten sind valide.",
     },
@@ -84,7 +84,7 @@ allQuestions = {
       question:
         'Erinnerst du dich an die Grafik über den Aufbau eines HTML Elements? Wie würdest du dieses Erklärbild (Dateiname: html-element-structure.jpg) zu einer Seite hinzufügen?',
       answer:
-        "Via <img src='html-element-structure' alt='Explanation of the general build-up of HTML Elements'> - das img Tag ist für das Einbinden eines Bildes da und das src (source) Attribut spezifiert die Quelle des anzuzeigenden Bildes. Das Attribut alt (alternative) ermöglicht es bspw. Screenreadern, Nutzern mit Sehbeeinträchtigung den Inhalt des Bildes zu erklären. Außerdem hilft das alt Attribut als Platzhalter für Bilder, die nicht geladen werden können und verbessert die Maschinenlesbarkeit deiner Website, was bspw. für das Ranking bei Suchmaschinen wichtig ist (SEO).",
+        "Via <img src='html-element-structure.jpg' alt='Explanation of the general build-up of HTML Elements'> - das img Tag ist für das Einbinden eines Bildes da und das src (source) Attribut spezifiert die Quelle des anzuzeigenden Bildes. Das Attribut alt (alternative) ermöglicht es bspw. Screenreadern, Nutzern mit Sehbeeinträchtigung den Inhalt des Bildes zu erklären. Außerdem hilft das alt Attribut als Platzhalter für Bilder, die nicht geladen werden können und verbessert die Maschinenlesbarkeit deiner Website, was bspw. für das Ranking bei Suchmaschinen wichtig ist (SEO).",
     },
     {
       question: "Was bezeichnet man als 'self closing tag'?",
@@ -98,7 +98,7 @@ allQuestions = {
     },
     {
       question:
-        'Was kann man zwischen den Opening und Closing tag von <video> hinzufügen und in welchen Fällen wird der Inhalt angezeigt?',
+        'Was kann man zwischen den Opening Tag und Closing tag von <video> hinzufügen und in welchen Fällen wird der Inhalt angezeigt?',
       answer: 'Einen Fallback-Text, der angezeigt wird, wenn das Video nicht geladen werden kann.',
     },
     {
