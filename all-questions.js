@@ -82,19 +82,14 @@ allQuestions = {
     },
     {
       question:
-        'Erinnerst du dich an die Grafik über den Aufbau eines HTML Elements? Wie würdest du dieses Erklärbild (Dateiname: html-element-structure.jpg) zu einer Seite hinzufügen?',
+        'Wie würdest du ein Bild (Dateiname: tree-roots.jpg), das den Zusammenhang zwischen einem Baum und seinem Wurzelnetz erklärt, zu einer Seite hinzufügen?',
       answer:
-        "Via <img src='html-element-structure.jpg' alt='Explanation of the general build-up of HTML Elements'> - das img Tag ist für das Einbinden eines Bildes da und das src (source) Attribut spezifiert die Quelle des anzuzeigenden Bildes. Das Attribut alt (alternative) ermöglicht es bspw. Screenreadern, Nutzern mit Sehbeeinträchtigung den Inhalt des Bildes zu erklären. Außerdem hilft das alt Attribut als Platzhalter für Bilder, die nicht geladen werden können und verbessert die Maschinenlesbarkeit deiner Website, was bspw. für das Ranking bei Suchmaschinen wichtig ist (SEO).",
+        "Via <img src='tree-roots.jpg' alt='Explanation how the tree and its roots are connected'> - das img Tag ist für das Einbinden eines Bildes da und das src (source) Attribut spezifiert die Quelle des anzuzeigenden Bildes. Das Attribut alt (alternative) ermöglicht es bspw. Screenreadern, Nutzern mit Sehbeeinträchtigung den Inhalt des Bildes zu erklären. Außerdem hilft das alt Attribut als Platzhalter für Bilder, die nicht geladen werden können und verbessert die Maschinenlesbarkeit deiner Website, was bspw. für das Ranking bei Suchmaschinen wichtig ist (SEO).",
     },
     {
       question: "Was bezeichnet man als 'self closing tag'?",
       answer:
         'Ein HTML Element bzw. ein Start Tag, das mit einem Slash abschließt: <img />. Diese haben kein explizites End-Tag mehr.',
-    },
-    {
-      question: 'Wie zeigt man bei einem Video HTML Element die Kontrollelemente an?',
-      answer:
-        "Indem man dem <video></video> Element ein Attribut namens 'controls' hinzufügt: <video src='...' controls></video>. Das Attribut kommt ohne Value aus, weil seine schiere Anwesenheit bereits die benötigte Information transportiert.",
     },
     {
       question:
