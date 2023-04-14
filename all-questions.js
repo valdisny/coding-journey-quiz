@@ -16,7 +16,7 @@ allQuestions = {
   ]
 }
 
-* Beim Laden der Quizseite geben wir den quiznamen als Parameter mit und bestimmen so, welche Frage/Antrowrtpäärchen wir laden müssen. Das passiert aber drüben in quiz.js - also husch, husch, ab mit dir.
+* Beim Laden der Quizseite geben wir den quiznamen als Parameter mit und bestimmen so, welche Frage/Antwortpäärchen wir laden müssen. Das passiert aber drüben in quiz.js - also husch, husch, ab mit dir.
 * === SPOILER ALERT! ===
 * === SPOILER ALERT! ===
 * === SPOILER ALERT! ===
@@ -102,4 +102,41 @@ allQuestions = {
         "Mithilfe des <h3> Tags. h steht für 'Heading' und die Zahl gibt das Level der Überschrift an - über h3 gibt es also h2 und h1, was h3 zu einer Unter-Unter-Überschrift macht.",
     },
   ],
+  quiz2: [
+    {
+      question: "Wie kennzeichnest du die Version deines HTML-Dokuments und wieso solltest du das tun?",
+      answer: 'Du kennzeichnest die Version deines html Dokuments als HTML5 via <!DOCTYPE html>. Übrigens, ein HTML 4 Dokument, also von der Vorgänger version, würdest du mit <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"> kennzeichnen - was ein Glück, das sie das eingekürzt haben. :) Der Sinn und Zweck einer Kennzeichnung ist, das es irgendwann HTML 6 geben wird, das ggf. inkompatibel zu HTML 5 sein wird. Wenn du nun keine Versionskennzeichnung in deinem HTML-File hast, würde der Browser annehmen, sie ist in der neuesten Version geschrieben - und deine Datei würde ggf. nicht mehr richtig angezeigt. Mit der Versionsdeklaration weiß der Browser immer, wie er die Datei lesen muss.'
+    },    {
+      question: "Wieso gehören all unsere Inhaltselemente in ein <body> Element?",
+      answer: "Weil es auch ein <head> Element gibt. Ohne die explizite Zuordnung zum <body> Element wüsste der Browser nicht, ob dein Element nun eine Metainformation ist (und in den Head gehört) oder Teil der anzuzeigenen Seite (also etwas im body)."
+    },    {
+      question: "Wozu ist der <head> da?",
+      answer: "Im Head-Element können wir allerlei Metainformationen unterbringen, die zwar nicht unmittelbar auf der Seite angezeigt werden, jedoch beeinflussen, wie der Browser damit umgeht. Bereits kennengelernt hierzu hast du das <title> Element, das beeinflusst, wie der Browser den Browsertab anzeigt. Spoiler: Hier wirst du später auch weitere Dateien einbinden, namentlich CSS- und JS-Dateien, die mit deiner Seite ausgeliefert werden sollen."
+    },    {
+      question: "Was ist ein <a> Tag?",
+      answer: 'Ein <a> Tag ist das, was wir allgemein als "Link" bezeichnen: Ein Verweis zu einem anderen Ort. Das a steht dafür für "anchor" und die Dinger heißen so, weil sie ganz ganz ganz am Anfang mal dafür gedacht waren, das du zwischen den Inhalten derselben Seite springst. Aber das nur als Trivia.'
+    },    {
+      question: "Schreibe ein Link-Element, das auf youtube.com linkt.",
+      answer: '<a href="https://youtube.com">Youtube</a>. Beachte, das du unbedingt https:// (das ist das Protokoll) vor deinen Link schreiben musst, ansonsten versucht dein Browser, den Link als lokalen Verweis zu interpretieren und kommt nicht am gewünschten Ziel an. Das <a> Element ist unser Link und das href Attribut (ich habe keine Ahnung, was das in lang heißt) gibt das Ziel unseres Links an.'
+    },    {
+      question: "Zu welchen Arten von Zielen kann ein Link-Element verlinken?",
+      answer: 'Zu drei Arten: Ankern auf der aktuellen Seite, zu anderen relativ gelegenen Dateien und zu externen Seiten. Links zu Abschnitten auf der selben Seite erzeugst du, in dem du bspw. <a href="#someId">Navi<a> nutzt. Damit springst du zu dem Element, das die ID someId gepflegt hat. Übrigens kannst du <a href="#">To top</a> nutzen, um zum Anfang der aktuellen Seite zu springen. Links zu relativen Seiten schreibst du per <a href="./anderereDatei.html">Andere Datei</a> und externe Ziele steuerst du an, in dem du das Protokoll, mit dem du navigieren möchtest, voranstellst - in aller Regel ist das https://: <a href="https://heise.de">Heise</a> '
+    },    {
+      question: "Wie kannst du Links in einem neuen Tab öffnen lassen?",
+      answer: 'Indem du das Ziel des Links mithilfe des target-Attribut spezifizierst. Für einen neuen Tab nutzt du target="_blank", was so ziemlich der Standardfall ist - du kannst target aber beispielsweise auch irgendeinen Namen mitgeben, zum Beispiel <a target="profil" href="./profil.html">Profilseite</a> - beim ersten Klick öffnet sich ein neuer Tab und dieser Tab hat dann quasi den Namen "Profil". Das heißt, wenn du erneut auf diesen Link klickst, oder einen anderen Link mit dem selben Target, öffnet sich nicht ein zweiter Tab, sondern der erste Tab wird mit dem neuen Inhalt überschrieben.'
+    },    {
+      question: 'Was bedeutet das "./" in einem relativen Pfad?',
+      answer: 'Bei einem relativen Pfad musst du angeben, von wo aus du loslaufen möchtest. ./ referenziert dabei dein aktuelles Verzeichnis, also das Verzeichnis, in der die Datei liegt, die den Link beinhaltet. Möchtest du von index.html auf profile.html linken, die direkt neben index.html liegt, nutzt du ./profile.html. Würde profile.html in einem Unterverzeichnis namens subpages liegen, würdest du zu ./subpages/profile.html linken. Soweit so gut - wenn du nun gerade auf profile.html bist und willst zurück zur index.html, die ja nun in einem Ordner _über_ dir liegt, nutzt du ../index.html. ../ bedeutet, du gehst von deiner aktuellen Position ein Verzeichnis zurück bzw. "nach oben". Außerdem hättest du noch die Möglichkeit, einen Link mit / anfangen zu lassen (ohne Punkt davor!). / navigiert zur Wurzel deines Servers, also zur allerobersten Stelle. In unserem Beispiel würde entsprechend auch /index.html als Link funktionieren.'
+    },    {
+      question: "Was kann ein a-Element beinhalten?",
+      answer: ' Ein a Element kann Parent von so ziemlich allen Elementen sein, die dann als "Klickfläche" für den Link herhalten. Sehr oft wird das genutzt um Bilder, beispielsweise kleine Icons oder Logos, anklickbar zu machen und zur Navigation zu nutzen. Du könntest aber auch einen Fließtext oder ein ganzes div in ein Link-Element packen, wenn du möchtest. Aus Userperspektive sollten verlinkte Elemente natürlich einigermaßen sinnvoll genutzt werden und ersichtlich sein; es macht keinen Spaß, eine Website zu benutzen, die dich scheinbar willkürlich auf andere Seiten schickt.'
+    },    {
+      question: "Wieso ist es wichtig, eine HTML Datei vernünftig zu formatieren und was heißt das genau?",
+      answer: "Grundsätzlich ist dem Browser piepegal, ob deine HTML Datei für einen Menschen lesbar formatiert ist oder nicht. Der Browser ignoriert Zeilenumbrüche wie Leerzeichen zwischen Elementen vollständig; sie sind für ihn irrelevant. Trotzdem gehört es zum guten Ton, eine Datei zu formatieren, denn es macht die Arbeit daran signifikant einfacher. Eine Datei zu formatieren ist in etwa so, wie viele unterschiedliche Arbeitsmaterialien ordentlich in Fächer zu sortieren, statt sie alle auf einen großen Haufen zu schmeißen. Eine Datei formatierst du meist, in dem du HTML- Elementen eine eigene Zeile gibst - je nach Umfang auch gern sowohl das Start-Tag, den Inhalt und das End-Tag in eine jeweils eigene - sowie eine Einrückung von meist 2 Spaces pro Parent-Element vorranstellst. Das HTML Element wäre gar nicht eingerückt, der body um 2 Spaces, das erste div um 4, undsoweiter. Das macht es dir deutlich einfacher, Eltern-Kind-Strukturen in deiner Datei zu erkennen. Glücklicherweise nehmen dir Code-Editoren wie Visual Studio Code bereits einen Großteil dieser Formatierungsarbeit ab."
+    },    {
+      question: "Wie schreibt man einen HTML-Kommentar und was tut er?",
+      answer: 'Ein HTML-Kommentar sieht folgendermaßen aus: <!-- das hier ist der kommentar -->. Kommentare gehören wie die Formatierung einer Datei zu Hilfsmitteln des Entwicklers. Sie werden vom Browser vollständig ignoriert. Kommentare können nützlich sein, um bspw. eine größere Datei in Blöcke zu unterteilen und die Übersicht zu verbessern (á la" Das hier ist die Navigation, das hier der Inhaltsbereich, die Seitenleiste, der Footer, ...") oder komplizierteren Code zu erklären (á la "Hier ermitteln wir die initiale Browserbreite des Nutzers, um das richtige CSS zu laden").'
+    }
+    
+  ]
 };
